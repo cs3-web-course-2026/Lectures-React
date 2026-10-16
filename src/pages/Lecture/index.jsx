@@ -25,7 +25,9 @@ function Lecture() {
         ← All lectures
       </Link>
       <header className={styles.header}>
-        <span className={styles.eyebrow}>{lecture.topic}</span>
+        <span className={styles.eyebrow}>
+          Lecture {lecture.number} · {lecture.topic}
+        </span>
         <h1>{lecture.title}</h1>
         <p>{lecture.summary}</p>
       </header>
