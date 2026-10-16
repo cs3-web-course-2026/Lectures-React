@@ -1,0 +1,43 @@
+.lecture,
+.notFound {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.notFound {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+}
+
+.header p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+}

@@ -1,0 +1,242 @@
+/* ──────────────────────────────────────────────────────────
+   Design tokens — Aurora Glass
+
+   Frosted glass panels over an indigo / violet / gold aurora,
+   a floating pill navigation and soft rounded corners.
+
+   One switch lives on <html>: data-theme = dark | light
+   (see ThemeToggle). Components read tokens only, so adding
+   a lecture page never needs hard-coded colors.
+   Default (no attribute) = dark.
+   ────────────────────────────────────────────────────────── */
+
+:root {
+  --font-body: 'Inter', system-ui, 'Segoe UI', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --gradient-gold: linear-gradient(
+    135deg,
+    #f8e6a0 0%,
+    #d4af37 55%,
+    #b8902a 100%
+  );
+  --color-on-accent: #1a1405;
+
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══ Palette · dark (default) ═════════════════════════════ */
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #070814;
+  --color-surface-1: #14142b;
+  --color-surface-2: #1c1c3a;
+  --color-surface-3: #26264a;
+  --color-text: #f5f3ff;
+  --color-text-secondary: #b9b8da;
+  --color-text-muted: #8f8eb3;
+  --color-border: rgb(255 255 255 / 13%);
+  --color-accent: #f0cd6b;
+  --color-accent-hover: #fbe9a6;
+  --color-accent-dim: rgb(240 205 107 / 11%);
+  --color-accent-border: rgb(240 205 107 / 40%);
+  --gradient-gold-text: linear-gradient(120deg, #fbe9a6, #e0b93f 50%, #f6d77a);
+
+  --color-success: #4ade80;
+  --color-success-dim: rgb(74 222 128 / 12%);
+  --color-success-border: rgb(74 222 128 / 32%);
+  --color-info: #60b5ff;
+  --color-info-dim: rgb(96 181 255 / 12%);
+  --color-info-border: rgb(96 181 255 / 32%);
+  --color-purple: #b79cff;
+  --color-purple-dim: rgb(183 156 255 / 12%);
+  --color-purple-border: rgb(183 156 255 / 32%);
+
+  --page-background:
+    radial-gradient(
+      620px 420px at 12% 0%,
+      rgb(99 102 241 / 42%),
+      transparent 62%
+    ),
+    radial-gradient(
+      520px 420px at 92% 8%,
+      rgb(168 85 247 / 32%),
+      transparent 60%
+    ),
+    radial-gradient(
+      520px 320px at 50% 105%,
+      rgb(212 175 55 / 20%),
+      transparent 60%
+    ),
+    #070814;
+  --card-bg: rgb(255 255 255 / 6%);
+  --card-border: rgb(255 255 255 / 13%);
+  --card-shadow: none;
+  --glass-bg: rgb(255 255 255 / 7%);
+  --glass-border: rgb(255 255 255 / 14%);
+  --nav-glass: rgb(10 11 28 / 74%);
+  --code-bg: rgb(0 0 0 / 32%);
+
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 40%);
+  --shadow-md: 0 8px 28px rgb(3 3 15 / 50%);
+  --shadow-lg: 0 18px 50px rgb(3 3 15 / 60%);
+  --shadow-gold: 0 8px 28px rgb(212 175 55 / 32%);
+}
+
+/* ═══ Palette · light ══════════════════════════════════════ */
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --color-bg: #f7f5ff;
+  --color-surface-1: #fff;
+  --color-surface-2: #f1eeff;
+  --color-surface-3: #e6e1fb;
+  --color-text: #1e1b3a;
+  --color-text-secondary: #4d4a73;
+  --color-text-muted: #6a6790;
+  --color-border: rgb(30 27 58 / 12%);
+  --color-accent: #8f6606;
+  --color-accent-hover: #6b4c04;
+  --color-accent-dim: rgb(212 175 55 / 16%);
+  --color-accent-border: rgb(143 102 6 / 38%);
+  --gradient-gold-text: linear-gradient(120deg, #8f6606, #c9a02b 50%, #8f6606);
+
+  --color-success: #15803d;
+  --color-success-dim: rgb(21 128 61 / 10%);
+  --color-success-border: rgb(21 128 61 / 35%);
+  --color-info: #0369a1;
+  --color-info-dim: rgb(3 105 161 / 10%);
+  --color-info-border: rgb(3 105 161 / 35%);
+  --color-purple: #6d28d9;
+  --color-purple-dim: rgb(109 40 217 / 10%);
+  --color-purple-border: rgb(109 40 217 / 35%);
+
+  --page-background:
+    radial-gradient(
+      620px 420px at 10% 0%,
+      rgb(167 139 250 / 38%),
+      transparent 62%
+    ),
+    radial-gradient(
+      520px 420px at 95% 10%,
+      rgb(251 191 36 / 28%),
+      transparent 60%
+    ),
+    radial-gradient(
+      520px 320px at 50% 105%,
+      rgb(244 114 182 / 16%),
+      transparent 60%
+    ),
+    #f7f5ff;
+  --card-bg: rgb(255 255 255 / 66%);
+  --card-border: rgb(30 27 58 / 9%);
+  --card-shadow: 0 8px 30px rgb(80 60 160 / 10%);
+  --glass-bg: rgb(255 255 255 / 66%);
+  --glass-border: rgb(30 27 58 / 10%);
+  --nav-glass: rgb(255 255 255 / 80%);
+  --code-bg: rgb(30 27 58 / 6%);
+
+  --shadow-sm: 0 1px 3px rgb(30 27 58 / 12%);
+  --shadow-md: 0 8px 28px rgb(80 60 160 / 14%);
+  --shadow-lg: 0 18px 50px rgb(80 60 160 / 18%);
+  --shadow-gold: 0 8px 28px rgb(181 138 30 / 32%);
+}
+
+/* ═══ Base elements ════════════════════════════════════════ */
+
+a {
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--page-background);
+  background-attachment: fixed;
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+
+button {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  padding: 0.55em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-surface-2);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+button:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface-3);
+  transform: translateY(-1px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+code {
+  background-color: var(--color-surface-2);
+  color: var(--color-accent);
+  padding: 0.2em 0.45em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+::selection {
+  background-color: rgb(212 175 55 / 35%);
+}
