@@ -1,0 +1,99 @@
+@property --pct {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 18px 16px 20px;
+  text-align: center;
+  color: var(--color-text);
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.roomName {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 128px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  background: conic-gradient(
+    var(--ring-color) calc(var(--pct) * 1%),
+    var(--color-surface-3) 0
+  );
+  border-radius: 50%;
+  transition: --pct 0.4s ease;
+}
+
+.ring::before {
+  content: '';
+  position: absolute;
+  inset: 11px;
+  background: var(--color-surface-1);
+  border-radius: 50%;
+}
+
+.reading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temperature {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.emoji {
+  margin-top: 4px;
+  font-size: 1.2rem;
+}
+
+.range {
+  margin: 12px 0 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  border-radius: 50%;
+}
+
+.btn:active {
+  transform: scale(0.92);
+}
