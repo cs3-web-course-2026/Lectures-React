@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LECTURES, LECTURE_STATUS } from '../../lectures';
+import { LECTURES, LECTURE_STATUS } from '@lectures';
 import styles from './Lectures.module.css';
 
 const BADGE = {

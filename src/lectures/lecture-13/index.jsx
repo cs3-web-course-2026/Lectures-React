@@ -1,4 +1,4 @@
-import LectureSlot from '../../components/LectureSlot';
+import LectureSlot from '@components/LectureSlot';
 
 function Lecture13() {
   // Build the lecture demo here: add components next to this file and render

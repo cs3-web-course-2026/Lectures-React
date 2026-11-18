@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { findLecture } from '../../lectures';
+import { findLecture } from '@lectures';
 import styles from './Lecture.module.css';
 
 function Lecture() {

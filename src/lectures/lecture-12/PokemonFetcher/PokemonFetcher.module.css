@@ -1,0 +1,40 @@
+.card {
+  display: grid;
+  place-items: center;
+  min-height: 190px;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.sprite {
+  width: 120px;
+  height: 120px;
+  image-rendering: pixelated;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  text-transform: capitalize;
+}
+
+.status {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.url {
+  margin: 0.75rem 0 0;
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@lectures": ["src/lectures"],
+      "@lectures/*": ["src/lectures/*"]
+    }
+  },
+  "include": ["src"]
+}

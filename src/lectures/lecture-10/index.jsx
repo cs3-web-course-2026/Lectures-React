@@ -1,4 +1,4 @@
-import DemoSection from './DemoSection';
+import DemoSection from '@components/DemoSection';
 import Recipe from './Recipe';
 import Tamagotchi from './Tamagotchi';
 import Thermostats from './Thermostat';

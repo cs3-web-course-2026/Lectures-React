@@ -1,0 +1,47 @@
+.card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 420px;
+  padding: 1.25rem;
+  color: var(--color-text);
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.card.dark {
+  color: #f5f3ff;
+  background: #0b0b1d;
+  border-color: rgb(255 255 255 / 20%);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.75rem 0;
+  font-size: 0.9rem;
+}
+
+.greeting {
+  margin: 1rem 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.storage {
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--color-success);
+  background: var(--code-bg);
+  border-radius: var(--radius-sm);
+}
